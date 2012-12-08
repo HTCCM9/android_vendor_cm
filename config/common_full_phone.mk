@@ -5,10 +5,10 @@ $(call inherit-product, vendor/cm/config/common.mk)
 include frameworks/base/data/sounds/NewAudio.mk
 
 # Extra Ringtones
-include frameworks/base/data/sounds/AudioPackageNewWave.mk
+#include frameworks/base/data/sounds/AudioPackageNewWave.mk
 
 # Bring in all video files
-$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
+#$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
@@ -16,7 +16,7 @@ include vendor/cm/config/cm_audio.mk
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=CyanTone.ogg \
-    ro.config.notification_sound=CyanMessage.ogg \
+    ro.config.notification_sound=CyanPing.ogg \
     ro.config.alarm_alert=CyanAlarm.ogg
 
 PRODUCT_PACKAGES += \
@@ -29,5 +29,5 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
-        vendor/cm/prebuilt/common/bootanimation/vertical-480x800.zip:system/media/bootanimation.zip
+        vendor/cm/prebuilt/common/bootanimation/vertical-540x960.zip:system/media/bootanimation.zip
 endif
